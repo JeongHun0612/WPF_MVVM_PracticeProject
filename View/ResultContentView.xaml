@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="PracticeCode.View.ResultContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PracticeCode.View" xmlns:viewmodel="clr-namespace:PracticeCode.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="320">
+
+    <UserControl.DataContext>
+        <viewmodel:ResultContentViewModel/>
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Border Background="{StaticResource BrushTitleBackground}" BorderBrush="{StaticResource BrushTitleBorderBrush}" BorderThickness="1">
+            <TextBlock x:Name="Title" Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" Foreground="WhiteSmoke" Margin="5,0,0,0"/>
+        </Border>
+    </Grid>
+</UserControl>
