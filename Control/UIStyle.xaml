@@ -6,7 +6,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
-                        <Border Name ="Btn_G_Board" CornerRadius="6">
+                        <Border Name ="Btn_G_Board" CornerRadius="5">
                             <Border.Effect>
                                 <DropShadowEffect ShadowDepth="1" RenderingBias="Performance" Direction="315" BlurRadius="1" Opacity="0.6"/>
                             </Border.Effect>
@@ -45,7 +45,6 @@
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
-
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Btn_G_Text" Property="Foreground" Value="{StaticResource BrushButtonEnableFalse}"/>
                         </Trigger>

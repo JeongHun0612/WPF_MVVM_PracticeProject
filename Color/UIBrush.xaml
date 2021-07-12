@@ -2,7 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:PracticeCode.Color">
 
-    <SolidColorBrush x:Key="BrushTitleBackground" Color="#FF3B3B3B"/>
+    <SolidColorBrush x:Key="BrushTitleText" Color="#3A3737"/>
+    <SolidColorBrush x:Key="BrushTitleBackground" Color="#B6BCC1"/>
     <SolidColorBrush x:Key="BrushTitleBorderBrush" Color="#FF282828"/>
     <SolidColorBrush x:Key="BrushButtonEnableFalse" Color="#FF313131"/>
+
+    <SolidColorBrush x:Key="BrushSelectedButtonBackground" Color="#CDD4D9"/>
+    <SolidColorBrush x:Key="BrushSelectedButtonText" Color="#F5F6F7"/>
 </ResourceDictionary>

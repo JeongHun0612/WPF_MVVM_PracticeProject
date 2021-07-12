@@ -52,3 +52,7 @@ C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\Prac
 C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\PracticeCode.pdb
 C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\View\ResultContentView.g.cs
 C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\View\ResultContentView.baml
+C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\View\MenuBarView.g.cs
+C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\View\MenuBarView.baml
+C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\View\SelectedButtonView.g.cs
+C:\Users\sjh96\OneDrive\바탕 화면\Project\C# WPF\PracticeCode\obj\Debug\View\SelectedButtonView.baml

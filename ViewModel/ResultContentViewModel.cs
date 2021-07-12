@@ -12,5 +12,12 @@ namespace PracticeCode.ViewModel
         {
             MainViewModel.resultContentViewModel = this;
         }
+
+        private string text = "0";
+        public string Text
+        {
+            get { return this.text; }
+            set { this.text = value; Notify("Text"); }
+        }
     }
 }

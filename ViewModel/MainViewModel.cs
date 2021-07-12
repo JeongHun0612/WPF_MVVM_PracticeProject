@@ -20,6 +20,8 @@ namespace PracticeCode.ViewModel
 
         public static TitleViewModel titleViewModel { get; set; } = null;
         public static ResultContentViewModel resultContentViewModel { get; set; } = null;
+        public static MenuBarViewModel menuBarViewModel { get; set; } = null;
+        public static SelectedButtonViewModel selectedButtonViewModel { get; set; } = null;
 
         //private Class1 class1 = new Class1();
         private DelegateCommand commandDragMove = null;
@@ -45,6 +47,7 @@ namespace PracticeCode.ViewModel
 
         private void Click(object obj) // Click Event
         {
+            Console.WriteLine("Main");
             string type = obj as string; // obj as string
             if (type == "Test") // MainWindow.xmal 버튼에서 선언한 CommandParameter?
             {
