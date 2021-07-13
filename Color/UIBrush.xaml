@@ -9,4 +9,6 @@
 
     <SolidColorBrush x:Key="BrushSelectedButtonBackground" Color="#CDD4D9"/>
     <SolidColorBrush x:Key="BrushSelectedButtonText" Color="#F5F6F7"/>
+
+    <SolidColorBrush x:Key="BrushResultPreviewText" Color="#F5F6F7" Opacity="0.5"/>
 </ResourceDictionary>

@@ -3,13 +3,20 @@
 
 
 
-    <Color x:Key="ColorButtonUpTop">#FF3B3B3B</Color>
-    <Color x:Key ="ColorButtonUpBottom">#FF222222</Color>
-    <Color x:Key="ColorButtonHoverTop">#FF191919</Color>
-    <Color x:Key ="ColorButtonHoverBottom">#FF2A2A2A</Color>
-    <Color x:Key="ColorButtonDownTop">#191919</Color>
-    <Color x:Key ="ColorButtonDownBottom">#323232</Color>
-    
+    <Color x:Key="ColorNumButtonUpTop">#FF3B3B3B</Color>
+    <Color x:Key ="ColorNumButtonUpBottom">#FF222222</Color>
+    <Color x:Key="ColorNumButtonHoverTop">#FF191919</Color>
+    <Color x:Key ="ColorNumButtonHoverBottom">#FF2A2A2A</Color>
+    <Color x:Key="ColorNumButtonDownTop">#191919</Color>
+    <Color x:Key ="ColorNumButtonDownBottom">#323232</Color>
+
+    <Color x:Key="ColorOperatorButtonUpTop">#7F7F7F</Color>
+    <Color x:Key ="ColorOperatorButtonUpBottom">#666666</Color>
+    <Color x:Key="ColorOperatorButtonHoverTop">#939393</Color>
+    <Color x:Key ="ColorOperatorButtonHoverBottom">#848484</Color>
+    <Color x:Key="ColorOperatorButtonDownTop">#5E5E5E</Color>
+    <Color x:Key ="ColorOperatorButtonDownBottom">#757575</Color>
+
     <Color x:Key="ColorCheckDisableTop">#FF273859</Color>
     <Color x:Key ="ColorCheckDisableBottom">#FF313861</Color>
 </ResourceDictionary>

@@ -13,11 +13,18 @@ namespace PracticeCode.ViewModel
             MainViewModel.resultContentViewModel = this;
         }
 
-        private string text = "0";
-        public string Text
+        private string resultContent = "0";
+        private string resultPreviewContent = null;
+        public string ResultContent
         {
-            get { return this.text; }
-            set { this.text = value; Notify("Text"); }
+            get { return this.resultContent; }
+            set { this.resultContent = value; Notify("ResultContent"); }
+        }
+
+        public string ResultPreviewContent
+        {
+            get { return this.resultPreviewContent; }
+            set { this.resultPreviewContent = value; Notify("ResultPreviewContent"); }
         }
     }
 }

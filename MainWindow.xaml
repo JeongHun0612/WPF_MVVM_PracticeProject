@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PracticeCode" xmlns:viewmodel="clr-namespace:PracticeCode.ViewModel"
+        xmlns:local="clr-namespace:PracticeCode"
+        xmlns:viewmodel="clr-namespace:PracticeCode.ViewModel"
         xmlns:view="clr-namespace:PracticeCode.View"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize"
@@ -26,7 +27,6 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -43,16 +43,6 @@
 
             <Grid Grid.Row="3">
                 <view:SelectedButtonView DataContext="{Binding Source={x:Static viewmodel:MainViewModel.selectedButtonViewModel}}"/>
-            </Grid>
-
-            <Grid Grid.Row="4">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="3" Style="{StaticResource ButtonStyle}" Foreground="{StaticResource BrushButtonEnableFalse}" Content="Test" Command="{Binding CommandClick}" CommandParameter="Test"/>
             </Grid>
         </Grid>
     </Border>

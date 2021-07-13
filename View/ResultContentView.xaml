@@ -12,6 +12,7 @@
     </UserControl.DataContext>
     
     <Grid>
-         <TextBlock x:Name="Title" Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="36" Foreground="WhiteSmoke" Margin="0,0,5,0"/>
+        <Label x:Name="ResultPreviewContent" Content="{Binding ResultPreviewContent}" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="20" Foreground="{StaticResource BrushResultPreviewText}" Margin="0,0,5,0"/>
+        <Label x:Name="ResultContent" Content="{Binding ResultContent}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="50" FontWeight="Bold" Foreground="Black" Margin="0,0,5,0"/>
     </Grid>
 </UserControl>

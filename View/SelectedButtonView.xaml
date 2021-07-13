@@ -26,27 +26,27 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <Button Content="9" Grid.Column="2" Grid.Row="1" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandClick}" CommandParameter="Test"/>
-        <Button Content="8" Grid.Column="1" Grid.Row="1" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="7" Grid.Column="0" Grid.Row="1" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="6" Grid.Column="2" Grid.Row="2" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="5" Grid.Column="1" Grid.Row="2" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="4" Grid.Column="0" Grid.Row="2" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="3" Grid.Column="2" Grid.Row="3" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="2" Grid.Column="1" Grid.Row="3" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="1" Grid.Column="0" Grid.Row="3" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="4" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
 
-        <Button Content="%" Grid.Column="0" Grid.Row="0" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="CE" Grid.Column="1" Grid.Row="0" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="C" Grid.Column="2" Grid.Row="0" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="÷" Grid.Column="3" Grid.Row="0" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="×" Grid.Column="3" Grid.Row="1" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="-" Grid.Column="3" Grid.Row="2" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="+" Grid.Column="3" Grid.Row="3" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        <Button Content="." Grid.Column="2" Grid.Row="4" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
-        
-        <Button Content="=" Grid.Column="3" Grid.Row="4" Style="{StaticResource ButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
+        <Button Content="9" Grid.Column="2" Grid.Row="1" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="9"/>
+        <Button Content="8" Grid.Column="1" Grid.Row="1" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="8"/>
+        <Button Content="7" Grid.Column="0" Grid.Row="1" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="7"/>
+        <Button Content="6" Grid.Column="2" Grid.Row="2" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="6"/>
+        <Button Content="5" Grid.Column="1" Grid.Row="2" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="5"/>
+        <Button Content="4" Grid.Column="0" Grid.Row="2" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="4"/>
+        <Button Content="3" Grid.Column="2" Grid.Row="3" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="3"/>
+        <Button Content="2" Grid.Column="1" Grid.Row="3" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="2"/>
+        <Button Content="1" Grid.Column="0" Grid.Row="3" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="1"/>
+        <Button Content="0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="4" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandNumClick}" CommandParameter="0"/>
+        <Button Content="." Grid.Column="2" Grid.Row="4" Style="{StaticResource NumButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandDotClick}" CommandParameter="."/>
+
+        <Button Content="%" Grid.Column="0" Grid.Row="0" Style="{StaticResource OperatorButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1"/>
+        <Button Content="BACK" Grid.Column="1" Grid.Row="0" Style="{StaticResource OperatorButtonStyle}" FontSize="18" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandBackClick}"/>
+        <Button Content="CLEAR" Grid.Column="2" Grid.Row="0" Style="{StaticResource OperatorButtonStyle}" FontSize="18" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandClearClick}"/>
+        <Button Content="÷" Grid.Column="3" Grid.Row="0" Style="{StaticResource OperatorButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandOperatorClick}" CommandParameter="÷"/>
+        <Button Content="×" Grid.Column="3" Grid.Row="1" Style="{StaticResource OperatorButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandOperatorClick}" CommandParameter="×"/>
+        <Button Content="-" Grid.Column="3" Grid.Row="2" Style="{StaticResource OperatorButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandOperatorClick}" CommandParameter="-"/>
+        <Button Content="+" Grid.Column="3" Grid.Row="3" Style="{StaticResource OperatorButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandOperatorClick}" CommandParameter="+"/>
+
+        <Button Content="=" Grid.Column="3" Grid.Row="4" Style="{StaticResource OperatorButtonStyle}" FontSize="22" Foreground="{StaticResource BrushSelectedButtonText}" Margin="1" Command="{Binding CommandResultClick}" CommandParameter="="/>
     </Grid>
 </UserControl>

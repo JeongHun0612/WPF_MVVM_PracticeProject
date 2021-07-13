@@ -13,6 +13,10 @@
     </UserControl.DataContext>
 
     <Grid>
-        <Button/>
+        <Button x:Name="BtnOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Content="메뉴"/>
+        <Grid x:Name="GridMenu" Width="150" HorizontalAlignment="Left" Margin="-150 0 0 0" Background="White">
+            <Button x:Name="BtnClose" HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30" Content="닫기"/>
+        </Grid>
+        
     </Grid>
 </UserControl>
