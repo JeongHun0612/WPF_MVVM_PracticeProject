@@ -13,7 +13,7 @@
     
     <Grid>
         <TextBlock x:Name="Title" Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" Foreground="{StaticResource BrushTitleText}" Margin="5,0,0,0"/>
-        <Button Content="-" Width="25" Height="20" Background="White" HorizontalAlignment="Right" Command="{Binding CommandExitClick}" Margin="0, 0, 50, 0"/>
+        <Button Content="-" Width="25" Height="20" Background="White" HorizontalAlignment="Right" Command="{Binding CommandMinimizeClick}" Margin="0, 0, 50, 0"/>
         <Button Content="ㅁ" Width="25" Height="20" Background="White" HorizontalAlignment="Right" Command="{Binding CommandMaximizeClick}" Margin="0, 0, 25, 0"/>
         <Button Content="X" Width="25" Height="20" Background="Red" HorizontalAlignment="Right" Command="{Binding CommandExitClick}"/>
     </Grid>

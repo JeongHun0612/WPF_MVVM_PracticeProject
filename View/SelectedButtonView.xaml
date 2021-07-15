@@ -11,7 +11,7 @@
         <viewmodel:SelectedButtonViewModel/>
     </UserControl.DataContext>
 
-    <Grid>
+    <Grid IsEnabled="{Binding IsEnabled}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>

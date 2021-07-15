@@ -7,10 +7,13 @@
         xmlns:viewmodel="clr-namespace:PracticeCode.ViewModel"
         xmlns:view="clr-namespace:PracticeCode.View"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize"
-        Title="MainWindow" Height="510" Width="320">
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize" WindowState="{Binding State}"
+        Title="MainWindow" Height="500" Width="320">
 
     <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding CommandLoaded}"/>
+        </i:EventTrigger>
         <i:EventTrigger EventName="MouseLeftButtonDown">
             <i:InvokeCommandAction Command="{Binding CommandDragMove}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
         </i:EventTrigger>
@@ -24,8 +27,6 @@
         <Grid Margin="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -34,16 +35,26 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <view:MenuBarView DataContext="{Binding Source={x:Static viewmodel:MainViewModel.menuBarViewModel}}"/>
+                <Grid Panel.ZIndex="1">
+                    <view:MenuBarView DataContext="{Binding Source={x:Static viewmodel:MainViewModel.menuBarViewModel}}"/>
+                </Grid>
+                <Grid Panel.ZIndex="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <view:ResultContentView DataContext="{Binding Source={x:Static viewmodel:MainViewModel.resultContentViewModel}}"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <view:SelectedButtonView DataContext="{Binding Source={x:Static viewmodel:MainViewModel.selectedButtonViewModel}}"/>
+                    </Grid>
+                </Grid>
             </Grid>
 
-            <Grid Grid.Row="2">
-                <view:ResultContentView DataContext="{Binding Source={x:Static viewmodel:MainViewModel.resultContentViewModel}}"/>
-            </Grid>
-
-            <Grid Grid.Row="3">
-                <view:SelectedButtonView DataContext="{Binding Source={x:Static viewmodel:MainViewModel.selectedButtonViewModel}}"/>
-            </Grid>
         </Grid>
     </Border>
+    <!--<DataGrid ItemsSource="{Binding Collection}">
+        
+    </DataGrid>-->
 </Window>

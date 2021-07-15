@@ -24,7 +24,6 @@ namespace PracticeCode
         public MainWindow()
         {
             InitializeComponent();
-            //DataContext = new MainViewModel();
         }
     }
 }

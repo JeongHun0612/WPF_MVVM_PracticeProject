@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace PracticeCode.ViewModel
 {
@@ -6,13 +7,16 @@ namespace PracticeCode.ViewModel
     {
         public TitleViewModel()
         {
-            MainViewModel.titleViewModel = this;
+            //MainViewModel.titleViewModel = this;
             this.commandExitClick = new DelegateCommand(ExitClick);
             this.commandMaximizeClick = new DelegateCommand(MaximizeClick);
-            this.commandMinimizeClick = new DelegateCommand(ExitClick);
+            this.commandMinimizeClick = new DelegateCommand(MinimizeClick);
         }
 
-        private string text = "계산기";
+        public delegate void DelegateState(WindowState state);
+        public event DelegateState delegateState;
+
+        private string text = "표준 계산기";
         private DelegateCommand commandExitClick = null;
         private DelegateCommand commandMaximizeClick = null;
         private DelegateCommand commandMinimizeClick = null;
@@ -37,7 +41,6 @@ namespace PracticeCode.ViewModel
             get => this.commandMinimizeClick;
             set => this.commandMinimizeClick = value;
         }
-        public WindowState WindowState { get; private set; }
 
         private void ExitClick(object obj)
         {
@@ -45,13 +48,24 @@ namespace PracticeCode.ViewModel
             //Environment.Exit(0);
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
+
         private void MaximizeClick(object obj)
         {
-            /*
-            Window window = obj as Window;
-            window = WindowState.Minimized;
-            this.WindowState = WindowState.Maximized;
-            */
+            if(MainViewModel.state == WindowState.Normal)
+            {
+                delegateState?.Invoke(WindowState.Maximized);
+            }
+            else
+            {
+                delegateState?.Invoke(WindowState.Normal);
+            }
+        }
+        private void MinimizeClick(object obj)
+        {
+            if (MainViewModel.state == WindowState.Normal)
+            {
+                delegateState?.Invoke(WindowState.Minimized);
+            }
         }
     }
 }

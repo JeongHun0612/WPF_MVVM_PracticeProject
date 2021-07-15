@@ -1,12 +1,13 @@
-﻿using System;
+﻿using PracticeCode.Model;
+using System;
 
 namespace PracticeCode.ViewModel
 {
-    public class SelectedButtonViewModel
+    public class SelectedButtonViewModel : Notifier
     {
         public SelectedButtonViewModel()
         {
-            MainViewModel.selectedButtonViewModel = this;
+            //MainViewModel.selectedButtonViewModel = this;
 
             this.commandNumClick = new DelegateCommand(NumClick);
             this.commandOperatorClick = new DelegateCommand(OperatorClick);
@@ -16,18 +17,26 @@ namespace PracticeCode.ViewModel
             this.commandResultClick = new DelegateCommand(ResultClick);
         }
 
+
         private bool isOperator = false;
 
         private double firstNumber = 0.0;
         private double secondNumber = 0.0;
         private double resultNumber = 0.0;
 
+        private bool isEnabled = true;
         private DelegateCommand commandNumClick = null;
         private DelegateCommand commandOperatorClick = null;
         private DelegateCommand commandDotClick = null;
         private DelegateCommand commandClearClick = null;
         private DelegateCommand commandBackClick = null;
         private DelegateCommand commandResultClick = null;
+
+        public bool IsEnabled
+        {
+            get { return this.isEnabled; }
+            set { this.isEnabled = value; Notify("IsEnabled"); }
+        }
 
         public DelegateCommand CommandNumClick
         {
@@ -97,28 +106,16 @@ namespace PracticeCode.ViewModel
                 {
                     isOperator = true;
                     double.TryParse(MainViewModel.resultContentViewModel.ResultContent, out secondNumber);
-                    char lastOperator = MainViewModel.resultContentViewModel.ResultPreviewContent[MainViewModel.resultContentViewModel.ResultPreviewContent.Length - 1];
-                    switch (lastOperator)
-                    {
-                        case '+':
-                            resultNumber = firstNumber + secondNumber;
-                            break;
-                        case '-':
-                            resultNumber = firstNumber - secondNumber;
-                            break;
-                        case '×':
-                            resultNumber = firstNumber * secondNumber;
-                            break;
-                        case '÷':
-                            resultNumber = firstNumber / secondNumber;
-                            break;
-                    }
+                    char lastOperator = CaluModel.LastChar(MainViewModel.resultContentViewModel.ResultPreviewContent);
+                    resultNumber = Calucator(lastOperator, firstNumber, secondNumber);
+
                     MainViewModel.resultContentViewModel.ResultPreviewContent = resultNumber.ToString() + parameter;
                     MainViewModel.resultContentViewModel.ResultContent = resultNumber.ToString();
                     firstNumber = resultNumber;
                 }
             }
         }
+
         private void DotClick(object obj)
         {
             string parameter = obj as string;
@@ -168,27 +165,36 @@ namespace PracticeCode.ViewModel
                 {
                     isOperator = true;
                     double.TryParse(MainViewModel.resultContentViewModel.ResultContent, out secondNumber);
-                    char lastOperator = MainViewModel.resultContentViewModel.ResultPreviewContent[MainViewModel.resultContentViewModel.ResultPreviewContent.Length - 1];
-                    switch (lastOperator)
-                    {
-                        case '+':
-                            resultNumber = firstNumber + secondNumber;
-                            break;
-                        case '-':
-                            resultNumber = firstNumber - secondNumber;
-                            break;
-                        case '×':
-                            resultNumber = firstNumber * secondNumber;
-                            break;
-                        case '÷':
-                            resultNumber = firstNumber / secondNumber;
-                            break;
-                    }
+                    char lastOperator = CaluModel.LastChar(MainViewModel.resultContentViewModel.ResultPreviewContent);
+                    resultNumber = Calucator(lastOperator, firstNumber, secondNumber);
+                    
                     MainViewModel.resultContentViewModel.ResultPreviewContent = firstNumber.ToString() + lastOperator + secondNumber.ToString() + parameter;
                     MainViewModel.resultContentViewModel.ResultContent = resultNumber.ToString();
                     firstNumber = resultNumber;
                 }
             }
+        }
+
+        private double Calucator(char lastOperator, double firstNumber, double secondNumber)
+        {
+            double resultNumber = 0.0;
+
+            switch (lastOperator)
+            {
+                case '+':
+                    resultNumber = CaluModel.Add(firstNumber, secondNumber);
+                    break;
+                case '-':
+                    resultNumber = CaluModel.Subtract(firstNumber, secondNumber);
+                    break;
+                case '×':
+                    resultNumber = CaluModel.Multiple(firstNumber, secondNumber);
+                    break;
+                case '÷':
+                    resultNumber = CaluModel.Division(firstNumber, secondNumber);
+                    break;
+            }
+            return resultNumber;
         }
     }
 }

@@ -58,6 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\CaluModel.cs" />
+    <Compile Include="Model\ListModel.cs" />
     <Compile Include="Model\TestModel.cs" />
     <Compile Include="ViewModel\ICommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

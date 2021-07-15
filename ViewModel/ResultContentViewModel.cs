@@ -10,7 +10,7 @@ namespace PracticeCode.ViewModel
     {
         public ResultContentViewModel()
         {
-            MainViewModel.resultContentViewModel = this;
+            //MainViewModel.resultContentViewModel = this;
         }
 
         private string resultContent = "0";

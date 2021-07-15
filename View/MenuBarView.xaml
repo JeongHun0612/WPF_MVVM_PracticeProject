@@ -3,20 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PracticeCode.View" xmlns:viewmodel="clr-namespace:PracticeCode.ViewModel"
+             xmlns:local="clr-namespace:PracticeCode.View" xmlns:viewmodel="clr-namespace:PracticeCode.ViewModel" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="30" d:DesignWidth="320">
+             d:DesignHeight="450" d:DesignWidth="150">
 
 
     <UserControl.DataContext>
         <viewmodel:MenuBarViewModel/>
     </UserControl.DataContext>
 
+    <UserControl.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="153"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="153"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BtnOpen">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BtnClose">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
     <Grid>
-        <Button x:Name="BtnOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Content="메뉴"/>
-        <Grid x:Name="GridMenu" Width="150" HorizontalAlignment="Left" Margin="-150 0 0 0" Background="White">
-            <Button x:Name="BtnClose" HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30" Content="닫기"/>
+        <Button x:Name="BtnOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Content="메뉴" Command="{Binding CommandNavOpenClick}"/>
+        <Grid x:Name="GridMenu" Width="150" HorizontalAlignment="Left" Margin="-153, 0, 0, 0" Background="White">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Button x:Name="BtnClose" HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30" Content="닫기" Command="{Binding CommandNavCloseClick}"/>
+            <ListBox x:Name="ListBox" ItemsSource="{Binding Path=ListItem}" HorizontalAlignment="Left" Height="350" Margin="0,30,0,0" VerticalAlignment="Top" Width="150"/>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonUp">
+                    <i:InvokeCommandAction Command="{Binding CommandListBoxSelection}" CommandParameter="{Binding ElementName=ListBox, Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </Grid>
-        
     </Grid>
 </UserControl>
